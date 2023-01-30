@@ -15,7 +15,10 @@ The following software needs to be installed:
 
 - [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
 
+
 ## developing within the container
+
+Copy the `templates/.env-template` file to the root as `.env` and update the values accordingly to your system.
 
 After installing all the extensions above, you can clone the repo and start all containers with `docker compose up` (check current directory).
 
