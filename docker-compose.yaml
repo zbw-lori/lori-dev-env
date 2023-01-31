@@ -1,15 +1,15 @@
 version: '3'
 services:
   frontend:
-    image: nginx:1.23
+    image: node:19.5
     container_name: lori-frontend
+    working_dir: /frontend/source/src
+    command: "npm start"
     ports:
-      # <Port exposed> : < MySQL Port running inside container>
       - "4443:443"
       - "8080:80"
     volumes:
       - ${FRONTEND_SRC_PATH}:/frontend:rw
-      - ./frontend/nginx/nginx_ssl.conf:/etc/nginx/nginx.conf:ro
       - ./frontend/ssl/lori-app.crt:/etc/ssl/certs/site.crt
       - ./frontend/ssl/lori-app.key:/etc/ssl/private/site.dec.key
 
