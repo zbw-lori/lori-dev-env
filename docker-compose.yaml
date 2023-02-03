@@ -10,8 +10,8 @@ services:
       - "8080:80"
     volumes:
       - ${FRONTEND_SRC_PATH}:/frontend:rw
-      - ./frontend/ssl/lori-app.crt:/etc/ssl/certs/site.crt
-      - ./frontend/ssl/lori-app.key:/etc/ssl/private/site.dec.key
+      # - ./frontend/ssl/lori-app.crt:/etc/ssl/certs/site.crt
+      # - ./frontend/ssl/lori-app.key:/etc/ssl/private/site.dec.key
 
 
   backend:
