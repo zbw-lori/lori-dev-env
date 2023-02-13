@@ -4,7 +4,7 @@ services:
     image: node:19.5
     container_name: lori-frontend
     working_dir: /frontend/source/src
-    command: "npm start"
+    command: ["tail", "-f", "/dev/null"] # To keep the container running
     ports:
       - "4443:443"
       - "8080:80"
