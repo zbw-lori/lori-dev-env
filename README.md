@@ -24,6 +24,12 @@ After installing all the extensions above, you can clone the repo and start all 
 
 In VS Code you can press `Ctrl + Shift + P` and choose `Dev Containers: Attach to running Containers...` and choose the image.
 
+If you want to connect to the terminal of the container, use this command as guidance:
+
+```bash
+docker exec -it <CONTAINER-NAME> /bin/bash
+```
+
 ## tech know-how
 
 ### storage location of named volumes in docker
