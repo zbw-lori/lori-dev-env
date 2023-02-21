@@ -20,7 +20,9 @@ The following software needs to be installed:
 
 Copy the `templates/.env-template` file to the root as `.env` and update the values accordingly to your system.
 
-After installing all the extensions above, you can clone the repo and start all containers with `docker compose up` (check current directory).
+After installing all the extensions above, you can clone the repo and start the desired containers with one of the startup scripts.
+
+e.g. `.\start_dev_emqx.ps1`
 
 In VS Code you can press `Ctrl + Shift + P` and choose `Dev Containers: Attach to running Containers...` and choose the image.
 
