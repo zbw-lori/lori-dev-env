@@ -13,14 +13,12 @@ services:
       # - ./frontend/ssl/lori-app.crt:/etc/ssl/certs/site.crt
       # - ./frontend/ssl/lori-app.key:/etc/ssl/private/site.dec.key
 
-
   backend:
     image: mcr.microsoft.com/dotnet/sdk:7.0
     command: ["tail", "-f", "/dev/null"] # To keep the container running
     container_name: lori-backend
     volumes:
       - ${BACKEND_SRC_PATH}:/backend:rw
-
 
   db:
     image: mysql:8
@@ -39,10 +37,9 @@ services:
     expose:
       # Opens port 3306 on the container
       - '3306'
-      # Where our data will be persisted
+    # Where our data will be persisted
     volumes:
       - db:/var/lib/mysql
-
 
 volumes:
   db:
