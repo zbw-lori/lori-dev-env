@@ -1,0 +1,27 @@
+version: '3'
+services:
+  emqx:
+    image: emqx:5.0.17
+    container_name: emqx
+    environment:
+    - "EMQX_NODE_NAME=emqx@node1.lori.dev"
+    - "EMQX_CLUSTER__DISCOVERY_STRATEGY=static"
+    # - "EMQX_CLUSTER__STATIC__SEEDS=[emqx@node1.lori.dev,emqx@node2.lori.dev]"
+    - "EMQX_CLUSTER__STATIC__SEEDS=[emqx@node1.lori.dev]"
+    healthcheck:
+      test: ["CMD", "/opt/emqx/bin/emqx_ctl", "status"]
+      interval: 5s
+      timeout: 25s
+    ports:
+      - '1883:1883' # mqtt
+      - '8083:8083' # websocket
+      - '8084:8084' # websocket over ssl
+      - '8883:8883' # mqtt over ssl
+      - '18083:18083' # emqx dashboard
+    volumes:
+      - emqx_data:/opt/emqx/data
+      - emqx_log:/opt/emqx/log
+      
+volumes:
+  emqx_data:
+  emqx_log:
