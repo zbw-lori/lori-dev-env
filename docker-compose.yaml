@@ -7,7 +7,7 @@ services:
     command: ["tail", "-f", "/dev/null"] # To keep the container running
     ports:
       - "4443:443"
-      - "8080:80"
+      - "8808:80"
     volumes:
       - ${FRONTEND_SRC_PATH}:/frontend:rw
       # - ./frontend/ssl/lori-app.crt:/etc/ssl/certs/site.crt
