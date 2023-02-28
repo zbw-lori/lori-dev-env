@@ -32,6 +32,10 @@ If you want to connect to the terminal of the container, use this command as gui
 docker exec -it <CONTAINER-NAME> /bin/bash
 ```
 
+## install microcks Docker Desktop extension
+
+For developing install the extension for `microcks` in the Docker Desktop software.
+
 ## tech know-how
 
 ### storage location of named volumes in docker
