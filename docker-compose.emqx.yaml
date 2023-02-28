@@ -1,10 +1,10 @@
 version: '3'
 services:
   emqx:
-    image: emqx:5.0.17
+    image: emqx/emqx:5.0.18
     container_name: emqx
     environment:
-    - "EMQX_NODE_NAME=emqx@node1.lori.dev"
+    - "EMQX_NODE_NAME=emqx@node1.lori-robotics.dev"
     - "EMQX_CLUSTER__DISCOVERY_STRATEGY=static"
     - "EMQX_CLUSTER__STATIC__SEEDS=[emqx@node1.lori-robotics.dev]"
     healthcheck:
