@@ -3,11 +3,12 @@ services:
   frontend:
     image: node:19.5
     container_name: lori-frontend
-    working_dir: /frontend/source/src
+    working_dir: /frontend
     command: ["tail", "-f", "/dev/null"] # To keep the container running
     ports:
       - "4443:443"
       - "8808:80"
+      - "3000:3000"
     volumes:
       - ${FRONTEND_SRC_PATH}:/frontend:rw
       # - ./frontend/ssl/lori-app.crt:/etc/ssl/certs/site.crt
