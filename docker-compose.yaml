@@ -17,6 +17,7 @@ services:
     image: mcr.microsoft.com/dotnet/sdk:7.0
     command: ["tail", "-f", "/dev/null"] # To keep the container running
     container_name: lori-backend
+    working_dir: /backend
     ports:
       - "5000:5000"
       - "57678:57678"
